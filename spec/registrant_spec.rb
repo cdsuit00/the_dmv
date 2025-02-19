@@ -28,4 +28,13 @@ RSpec.describe Registrant do
     expect(@registrant_2.permit).to eq(false)
   end
 
+  it 'has license_data' do
+    expect(@registrant_1.license_data).to eq({written: false, license: false, renewed:false})
+    expect(@registrant_2.license_data).to eq({written: false, license: false, renewed:false})
+  end
+
+  it 'can earn permit' do
+    expect(@registrant_2.earn_permit).to eq(true)
+  end
+  
 end
